@@ -1,0 +1,234 @@
+
+
+
+
+
+
+
+
+PRECISAMOS PEGAR AS IMAGES DO SITE...
+
+
+
+
+CERTO... PEGUEI TUDO...
+
+
+
+
+
+
+
+
+
+TEMOS ALGUMAS COLORS CUSTOM, TAMBÉM, QUE SÃO ESTAS:
+
+
+
+
+
+
+
+
+
+
+
+
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ['*'],
+  theme: {
+    screens: {
+      sm: '480px',
+      md: '768px',
+      lg: '976px',
+      xl: '1440px',
+    },
+
+    extend: {
+      colors: {
+        cyan: 'hsl(180, 66%, 49%)',
+        cyanLight: 'hsl(180, 66%, 69%)',
+        darkViolet: 'hsl(257, 27%, 26%)',
+        red: 'hsl(0, 87%, 67%)',
+        grayishViolet: 'hsl(257, 7%, 63%)',
+        veryDarkBlue: 'hsl(255, 11%, 22%)',
+        veryDarkViolet: 'hsl(260, 8%, 14%) ',
+      },
+      fontFamily: {
+        sans: ['Poppins', 'sans-serif'],
+      },
+      letterSpacing: {
+        widest: '.3em',
+      },
+    },
+  },
+  plugins: [],
+};
+
+
+
+
+
+
+
+
+
+
+
+
+E A FONT-FAMILY SERÁ 'Poppins',
+
+em vez de 'sans' comum...
+
+
+
+
+
+
+
+
+
+
+
+para o spacing, o professor adiciona uma class de '180',
+
+que é custom...
+
+
+
+
+
+
+
+
+EX:
+
+
+
+
+
+
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ['*'],
+  theme: {
+    screens: {
+      sm: '480px',
+      md: '768px',
+      lg: '976px',
+      xl: '1440px',
+    },
+
+    extend: {
+      colors: {
+        cyan: 'hsl(180, 66%, 49%)',
+        cyanLight: 'hsl(180, 66%, 69%)',
+        darkViolet: 'hsl(257, 27%, 26%)',
+        red: 'hsl(0, 87%, 67%)',
+        grayishViolet: 'hsl(257, 7%, 63%)',
+        veryDarkBlue: 'hsl(255, 11%, 22%)',
+        veryDarkViolet: 'hsl(260, 8%, 14%) ',
+      },
+      fontFamily: {
+        sans: ['Poppins', 'sans-serif'],
+      },
+      letterSpacing: {
+        widest: '.3em',
+      },
+      spacing: {
+        180: '32rem',
+      },
+    },
+  },
+  plugins: [],
+};
+
+
+
+
+
+
+
+
+
+
+
+-> ESSE SPACING SERÁ USADO PARA A IMAGE...
+
+
+
+
+
+
+
+
+
+
+
+
+
+NO HTML, DEVEMOS IMPORTAR A FONT 'POPPINS',
+
+
+
+e também o favicon...
+
+
+
+
+
+
+
+
+
+
+FICOU TIPO ASSIM:
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alata&family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Hero Section -->
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+NA PRÓXIMA AULA, COMEÇAREMOS COM A NAVBAR...

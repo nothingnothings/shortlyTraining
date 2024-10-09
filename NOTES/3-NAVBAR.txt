@@ -1,0 +1,313 @@
+
+COMEÇAMOS COM O HTML SEM NADA...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> FAREMOS 1 NAVBAR...
+
+
+
+
+
+
+
+
+MAS A NAVBAR SERÁ 1 POUCO DIFERENTE, PQ 
+
+TEREMOS 
+
+1 HAMBURGER MENU ATÉ 'LARGE SCREENS'...
+
+
+
+
+
+
+
+
+
+
+
+
+---> DIFERENTE DO ÚLTIMO PROJECT, PORTANTO...
+
+
+
+
+
+
+
+--> E FAREMOS O BURGER MENU NO FINAL...
+
+
+
+
+
+
+
+
+--> TEREMOS 1 FLEXBOX QUE VAI WRAP EM VOLTA 
+    DE ESSES ITEMS...
+
+
+
+
+
+
+
+-->  O FLEXBOX VAI WRAPPAR 2 FLEX ITEMS:
+
+    1) LOGO + 1 PEQUENO MENU/NAVBAR (FLEXBOX EM SI, COM 2 ITEMS)
+
+
+    2) BOTÕES DE LOGIN + SIGN UP 
+
+
+
+
+
+
+
+
+
+COMEÇAMOS ASSIM:
+
+
+
+
+
+
+
+
+    <!-- Nav Container -->
+    <div class="nav relative container mx-auto p-6">
+      <!-- Flex Container For All Items (2 items) -->
+      <div class="flex items-center justify-between">
+        <!-- Flex Container For Logo and Menu Items -->
+        <div class="flex items-center space-x-20">
+          <!-- Logo -->
+          <img src="images/logo.svg" alt="" />
+           <!-- Left Menu -->
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+    O left menu vai ser HIDDEN por default,
+
+
+    E VAI APARECER APENAS 
+
+
+    EM TELAS LARGE (lg:flex)..
+
+
+
+
+
+
+
+
+
+VAI FICANDO TIPO ASSIM:
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alata&family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Nav Container -->
+    <div class="nav relative container mx-auto p-6">
+      <!-- Flex Container For All Items (2 items) -->
+      <div class="flex items-center justify-between">
+        <!-- Flex Container For Logo and Menu Items -->
+        <div class="flex items-center space-x-20">
+          <!-- Logo -->
+          <img src="images/logo.svg" alt="" />
+          <!-- Left Menu -->
+          <div class="hidden space-x-8 font-bold lg:flex">
+            <a href="#" class="text-grayishViolet hover:text-veryDarkViolet"
+              >Features</a
+            >
+            <a href="#" class="text-grayishViolet hover:text-veryDarkViolet"
+              >Pricing</a
+            >
+            <a href="#" class="text-grayishViolet hover:text-veryDarkViolet"
+              >Resources</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DEPOIS DISSO, TEMOS O BUTTONS MENU DA PARTE DA DIREITA... 
+
+
+
+ELE VAI SER HIDDEN, POR DEFAULT, EM SMALLER SCREENS,
+
+E VAI APARECER 
+
+SOMENTE 
+
+EM DISPLAYS MAIORES (large e upper)..
+
+
+
+
+
+
+
+
+
+
+
+FICOU TIPO ASSIM:
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alata&family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Nav Container -->
+    <nav class="nav relative container mx-auto p-6">
+      <!-- Flex Container For All Items (2 items) -->
+      <div class="flex items-center justify-between">
+        <!-- Flex Container For Logo and Menu Items (Left) -->
+        <div class="flex items-center space-x-20">
+          <!-- Logo -->
+          <img src="images/logo.svg" alt="" />
+          <!-- Left Menu -->
+          <div class="hidden space-x-8 font-bold lg:flex">
+            <a href="#" class="text-grayishViolet hover:text-veryDarkViolet"
+              >Features</a
+            >
+            <a href="#" class="text-grayishViolet hover:text-veryDarkViolet"
+              >Pricing</a
+            >
+            <a href="#" class="text-grayishViolet hover:text-veryDarkViolet"
+              >Resources</a
+            >
+          </div>
+        </div>
+        <!-- Flex Container For Login and Signup Items (Right) -->
+        <div
+          class="hidden items-center space-x-6 font-bold text-grayishViolet lg:flex"
+        >
+          <div class="hover:text-veryDarkViolet">Login</div>
+          <a
+            href=""
+            class="px-8 py-3 font-bold text-white bg-cyan rounded-full hover:opacity-70"
+            >Sign Up</a
+          >
+        </div>
+        <!-- TODO HAMBURGER MENU -->
+      </div>
+      <!-- TODO MOBILE MENU -->
+    </nav>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+O PRÓXIMO VIDEO SERÁ SOBRE A HERO SECTION...

@@ -1,0 +1,350 @@
+
+
+
+
+
+
+
+
+COMEÇAMOS ASSIM:
+
+
+
+
+
+
+    <!-- CTA SECTION -->
+    <section id="cta" class="py-24 bg-darkViolet">
+      <!-- CTA CONTAINER -->
+      <div class="flex flex-col p2 space-y-6">
+        <h5
+          class="mx-auto space-y-10 text-4xl font-bold text-center text-white"
+        >
+          Boost your links today
+        </h5>
+        <button
+          class="px-10 py-5 mx-auto text-2xl font-bold text-white rounded-full bg-cyan hover:bg-cyanLight md:text-base md:py-3 focus:outline-none"
+        >Get Started</button>
+      </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+MAS TEMOS 1 BACKGROUND IMAGE PARA ESSA SECTION TAMBÉM,
+
+
+POR ISSO PRECISAMOS CRIAR UMA CLASS CUSTOM EM 'style.css',
+
+
+para 
+
+estilizar esse background...
+
+
+
+
+
+
+tipo assim:
+
+
+
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#cta {
+  background-image: url('images/bg-boost-desktop.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+AGORA PRECISAMOS DO FOOTER...
+
+
+
+
+
+
+
+
+
+
+
+
+--> VAMOS ATÉ A PARTE DO FOOTER,
+
+
+E AÍ COLOCAMOS 1 CLASS DE 
+
+
+'py-16',
+
+e o background será 
+
+
+veryDarkViolet...
+
+
+
+
+
+
+
+
+
+EX:
+
+
+
+
+
+
+
+
+
+
+    <!-- FOOTER -->
+    <footer class="py-16 bg-veryDarkViolet">
+      <div
+        class="container flex flex-col items-center justify-between mx-auto space-y-16 md:flex-row md:space-y-0 md:items-start"
+      >
+        <!-- Logo -->
+        <img src="images/logo.svg" alt="" />
+      </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> DEPOIS DISSO, PRECISAMOS DO CONTAINER PARA OS MENUS,
+QUE SERÃO 3 (3 flex items, stacked on top of each other, e aí flex row em medium e higher)...
+
+
+
+
+
+
+
+
+
+
+
+
+   <footer class="py-16 bg-veryDarkViolet">
+      <div
+        class="container flex flex-col items-center justify-between mx-auto space-y-16 md:flex-row md:space-y-0 md:items-start"
+      >
+        <!-- Logo -->
+        <img src="images/logo.svg" alt="" />
+        <!-- Menus (three) Container -->
+        <div
+          class="flex flex-col space-y-16 md:space-x-20 md:flex-row md:space-y-0"
+        >
+          <!-- Menu 1 (always col, always stacked on top of each other)-->
+          <div class="flex flex-col items-center w-full md:items-start">
+            <div class="mb-5 font-bold text-white capitalize">Features</div>
+            <div class="flex flex-col items-center space-y-3 md:items-start">
+              <a href="#" class="capitalize text-grayishViolet hover:text-cyan"
+                >Link Shortening</a
+              >
+              <a href="#" class="capitalize text-grayishViolet hover:text-cyan"
+                >Branded Links</a
+              >
+              <a href="#" class="capitalize text-grayishViolet hover:text-cyan"
+                >Analytics</a
+              >
+            </div>
+          </div>
+          <!-- Menu 2 (always col, always stacked on top of each other)-->
+          <div class="flex flex-col items-center w-full md:items-start">
+            <div class="mb-5 font-bold text-white capitalize">Resources</div>
+            <div class="flex flex-col items-center space-y-3 md:items-start">
+              <a href="#" class="capitalize text-grayishViolet hover:text-cyan"
+                >Blog</a
+              >
+              <a href="#" class="capitalize text-grayishViolet hover:text-cyan"
+                >Developers</a
+              >
+              <a href="#" class="capitalize text-grayishViolet hover:text-cyan"
+                >Support</a
+              >
+            </div>
+          </div>
+          <!-- Menu 3 (always col, always stacked on top of each other)-->
+          <div class="flex flex-col items-center w-full md:items-start">
+            <div class="mb-5 font-bold text-white capitalize">Company</div>
+            <div class="flex flex-col items-center space-y-3 md:items-start">
+              <a href="#" class="capitalize text-grayishViolet hover:text-cyan"
+                >About</a
+              >
+              <a href="#" class="capitalize text-grayishViolet hover:text-cyan"
+                >Our Team</a
+              >
+              <a href="#" class="capitalize text-grayishViolet hover:text-cyan"
+                >Careers</a
+              >
+              <a href="#" class="capitalize text-grayishViolet hover:text-cyan"
+                >Contact</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+    CERTO...
+
+
+
+
+
+
+    funcionou...
+
+
+
+
+
+
+
+
+
+
+MAS AINDA PRECISAMOS DO SOCIAL CONTAINER...
+
+
+
+
+
+
+
+
+
+PARA O SOCIAL CONTAINER:
+
+
+
+
+
+
+
+
+      <!-- Social Container -->
+        <div class="flex space-x-6">
+          <a href="#">
+            <img src="images/icon-facebook.svg" alt="" class="ficon" />
+          </a>
+          <a href="#">
+            <img src="images/icon-twitter.svg" alt="" class="ficon" />
+          </a>
+          <a href="#">
+            <img src="images/icon-pinterest.svg" alt="" class="ficon" />
+          </a>
+          <a href="#">
+            <img src="images/icon-instagram.svg" alt="" class="ficon" />
+          </a>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+-- AÍ ESTILIZAMOS O FICON,
+
+
+
+essa class custom..
+
+
+
+
+TIPO ASSIM:
+
+
+
+
+.ficon:hover {
+  filter: invert(79%) sepia(61%) saturate(464%) hue-rotate(130deg)
+    brightness(89%) contrast(85%);
+}
+
+
+
+
+
+
+CERTO...
+
+
+
+
+
+
+
+
+
+
+
+OK... ESSA PARTE ESTÁ ACABADA...
+
+
+
+
+
+
+
+A ÚLTIMA COISA QUE VAMOS FAZER, AGORA, É O HAMBURGER MENU... (com javascript)...

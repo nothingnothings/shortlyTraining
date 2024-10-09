@@ -1,0 +1,327 @@
+
+
+
+
+
+
+
+
+
+OK.. AGORA ADICIONAREMOS O HAMBURGER MENU/ICON,
+
+
+E AÍ 
+
+O MOBILE MENU (a sidebar)...
+
+
+
+
+
+
+
+
+
+
+
+
+--> O ICON, O BURGER BUTTON,
+
+VAI SER O MESMO 
+
+
+DO PROJETO ANTERIOR...
+
+
+
+
+
+VAMOS COPIAR E COLAR AQUELE CÓDIGO HTML...
+
+
+
+
+
+
+
+
+--> É ESTE CÓDIGO AQUi:
+
+
+
+
+
+
+         <!-- HAMBURGER BUTTON -->
+          <div class="md:hidden">
+            <button
+              type="button"
+              id="menu-btn"
+              class="z-40 block hamburger md:hidden focus:outline-none"
+            >
+              <span class="hamburger-top"></span>
+              <span class="hamburger-middle"></span>
+              <span class="hamburger-bottom"></span>
+            </button>
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+MAS ALTERAMOS UM POUCO, 
+
+PARA 
+
+DEIXAR 'lg:hidden',
+
+tipo assim:
+
+
+
+
+
+         <!-- HAMBURGER BUTTON -->
+          <div class="md:hidden">
+            <button
+              type="button"
+              id="menu-btn"
+              class="block hamburger lg:hidden focus:outline-none"
+            >
+              <span class="hamburger-top"></span>
+              <span class="hamburger-middle"></span>
+              <span class="hamburger-bottom"></span>
+            </button>
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+AINDA PRECISAMOS ADICIONAR 1 CSS CUSTOM, 
+
+
+PQ NAO TEMOS NADA PARA ESSAS CLASSES, INICIALMENTE...
+
+
+
+
+
+
+
+
+
+
+
+
+--> em style.css,
+
+
+colocamos o mesmo código 
+
+
+
+da última aula,
+
+tipo assim:
+
+
+
+/* Hamburger */
+.hamburger {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  transition: all 0.25s;
+  position: relative;
+}
+
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom {
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  top: 0;
+  left: 0;
+  background: #fff;
+  transform: rotate(0);
+  transition: all 0.5s;
+}
+
+.hamburger-middle {
+  transform: translateY(7px);
+}
+
+.hamburger-bottom {
+  transform: translateY(14px);
+}
+
+.open {
+  transform: rotate(90deg);
+}
+
+.open .hamburger-top {
+  transform: rotate(45deg) translateY(6px) translateX(6px);
+}
+
+.open .hamburger-middle {
+  display: none;
+}
+
+.open .hamburger-bottom {
+  transform: rotate(-45deg) translateY(6px) translateX(-6px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+certo...
+
+
+
+
+
+
+
+AÍ PRECISAMOS DO JAVASCRIPT PARA ADICIONAR E REMOVER 
+
+
+A CLASS DE 'OPEN'...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+O MOBILE MENU (sidebar) em si, 
+
+é este aqui:
+
+
+
+
+      <!-- TODO MOBILE MENU -->
+      <div
+        id="menu"
+        class="absolute hidden p-6 rounded-lg bg-darkViolet left-6 right-6 top-20 z-100"
+      >
+        <div
+          class="flex flex-col items-center justify-center w-full space-y-6 font-bold text-white rounded-sm"
+        >
+          <a href="#" class="w-full text-center">Features</a>
+          <a href="#" class="w-full text-center">Pricing</a>
+          <a href="#" class="w-full text-center">Resources</a>
+          <a href="#" class="w-full pt-6 border-t border-gray-400 text-center"
+            >Login</a
+          >
+          <a href="#" class="w-full py-3 text-center rounded-full bg-cyan"
+            >Sign Up</a
+          >
+        </div>
+      </div> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> PRECISAMOS DE UM JAVASCRIPT PARA PODER FAZER SHOW DISSO... FAZER TOGGLE ENTRE 'hidden' e flex'...
+
+
+
+
+
+
+
+
+
+
+
+
+SELECIONAMOS ESSES ELEMENTS ASSIM:
+
+
+
+
+const btn = document.getElementById('menu-btn');
+const menu = document.getElementById('menu');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+E O CÓDIGO FICA TIPO ASSIM:
+
+
+
+
+
+
+
+
+
+const btn = document.getElementById('menu-btn');
+const menu = document.getElementById('menu');
+
+// Toggle Mobile Menu
+btn.addEventListener('click', () => {
+  menu.classList.toggle('hidden');
+  menu.classList.toggle('flex');
+  btn.classList.toggle('open');
+});

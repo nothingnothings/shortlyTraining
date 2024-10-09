@@ -1,0 +1,344 @@
+
+
+
+
+
+
+
+
+
+
+AGORA O PROFESSOR QUER ESCREVER 1 POUCO DE JS,
+
+PARA QUE 
+
+
+RECEBAMOS UMA MESSAGE DE ERROR 
+
+
+SE TENTAMOS SUBMITTAR QUALQUER STRING QUE NÃO É UMA URL VÁLIDA...
+
+
+
+
+
+
+
+
+
+
+
+--> PARA ISSO, TEMOS QUE IR ATÉ NOSSO FORM,
+
+
+
+
+
+
+E AÍ ESCREVEMOS AS ERROR MESSAGES LOGO ABAIXO...
+
+
+
+
+
+
+TIPO ASSIM:
+
+
+
+
+        <!-- Shorten Form -->
+        <form
+          id="link-form"
+          class="relative flex flex-col w-full p-10 -mt-20 space-y-4 bg-darkViolet rounded-lg md:flex-row md:space-y-0 md:space-x-3"
+        >
+          <input
+            placeholder="Shorten a link here"
+            id="link-input"
+            type="text"
+            class="flex-1 p-3 border-2 rounded-lg placeholder-yellow-500 focus:outline-none"
+          />
+          <button
+            class="px-10 py-3 text-white bg-cyan rounded-lg hover:bg-cyanLight focus:outline-none md:py-2"
+          >
+            Shorten It!
+          </button>
+          <!-- Error Messages (shown with JS) -->
+          <div class="absolute left-7 bottom-3 text-red text-sm italic"></div>
+        </form>
+
+
+
+
+
+
+
+
+
+
+
+
+O TEXTO SERÁ INSERIDO DINAMICAMENTE, NESSE LOCAL, 
+
+COM JAVASCRIPT,
+
+
+
+POR ISSO DEIXAMOS ESSA DIV INICIALMENTE VAZIA...
+
+
+
+
+
+
+
+
+
+--> O PROFESSOR TAMBÉM QUER DEIXAR A BORDA DO INPUT RED,
+
+SEMPRE QUE 
+
+O QUE O USER TIVER ESCRITO ALGO ERRADO... FAZER ISSO DINAMICAMENTE,
+
+COM JAVASCRIPT...
+
+
+
+
+
+
+--> CRIAMOS 1 ARQUIVO 'script.js',
+
+e aí importamos no HTML...
+
+
+
+
+
+
+
+
+
+
+ESCREVEMOS TIPO ASSIM:
+
+
+
+
+
+
+
+
+const input = document.getElementById('link-input');
+const form = document.getElementById('link-form');
+const error = document.getElementById('err-msg');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+AÍ 1 EVENT LISTENER:
+
+
+
+
+
+
+
+const input = document.getElementById('link-input');
+const linkForm = document.getElementById('link-form');
+const error = document.getElementById('err-msg');
+
+linkForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  console.log('123');
+});
+
+
+
+
+
+
+
+
+CERTO...
+
+
+
+
+
+
+
+
+
+ATÉ AÍ, TUDO BEM...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> VAMOS PEGAR O 'input.value',
+
+
+para então fazer o validate...
+
+
+
+
+
+
+
+
+
+
+
+
+TIPO ASSIM:
+
+
+
+
+
+
+
+
+
+const input = document.getElementById('link-input');
+const linkForm = document.getElementById('link-form');
+const errMsg = document.getElementById('err-msg');
+
+linkForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  if (input.value === '') {
+    errMsg.innerHTML = 'Please enter a link';
+    input.classList.add('border-red');
+  }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> TAMBÉM QUEREMOS TER 1 ERROR MSG 
+
+SE  A URL 
+
+
+NÃO FOR VÁLIDA..
+
+
+
+
+
+
+-> USAREMOS 1 REGULAR EXPRESSION PARA VALIDATE A URL...
+
+
+
+
+TIPO ASSIM:
+
+
+
+
+
+
+const input = document.getElementById('link-input');
+const linkForm = document.getElementById('link-form');
+const errMsg = document.getElementById('err-msg');
+
+linkForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  if (input.value === '') {
+    errMsg.innerHTML = 'Please enter a link';
+    input.classList.add('border-red');
+  } else if (!validURL(input.value)) {
+    errMsg.innerHTML = 'Please enter a valid URL';
+    input.classList.add('border-red');
+  } else {
+    errMsg.innerHTML = '';
+    input.classList.remove('border-red');
+    alert('Success!');
+  }
+});
+
+// Validate a URL
+function validURL(str) {
+  var pattern = new RegExp(
+    '^(https?:\\/\\/)?' + // protocol
+      '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' +
+      '((\\d{1,3}\\.){3}\\d{1,3}))' +
+      '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' +
+      '(\\?[;&a-z\\d%_.~+=-]*)?' +
+      '(\\#[-a-z\\d_]*)?$',
+    'i'
+  );
+  return !!pattern.test(str);
+}
+
+
+
+
+
+
+
+
+
+
+
+FOI FICANDO BASICAMENTE ASSIM...
+
+
+
+
+
+
+
+
+
+CERTO... FUNCIONOU...
+
+
+
+
+
+OK...
